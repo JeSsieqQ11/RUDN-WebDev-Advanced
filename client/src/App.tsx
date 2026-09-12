@@ -2,6 +2,29 @@ import { BoardHeader } from "./components/BoardHeader/BoardHeader";
 import { BoardColumn } from "./components/BoardColumn/BoardColumn";
 import { NewCardForm } from "./components/NewCardForm/NewCardForm";
 import styles from "./App.module.css";
+import type { Card } from "./types/card";
+
+
+const cards: Card[] = [{
+  id: '1',
+   title: 'первая карточка', 
+   isDone: false
+},
+{
+  id: '2',
+  title: 'vtoraya карточка',
+  isDone: false
+},
+{
+  id: '3',
+  title: 'tretya карточка', 
+  isDone: false
+},
+{ 
+  id: '4', 
+  title: 'chetvertaya карточка', 
+  isDone: true
+}];
 
 function App() {
   return (
@@ -10,7 +33,7 @@ function App() {
       <main className={styles.board}>
         <NewCardForm />
         <div className={styles.columns}>
-          <BoardColumn />
+          <BoardColumn cards={cards} />
         </div>
       </main>
     </div>
